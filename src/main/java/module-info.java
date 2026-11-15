@@ -3,6 +3,7 @@ module co.edu.uniquindio.edu.poo.nequi {
 
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.logging;
 
     // PERMITIR EJECUTAR LA APLICACION
     exports co.edu.uniquindio.edu.poo.nequi;
