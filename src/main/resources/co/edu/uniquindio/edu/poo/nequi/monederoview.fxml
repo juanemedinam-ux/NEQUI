@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="560.0"
+            prefWidth="760.0"
+            style="-fx-background-color: #ffffff;"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.edu.poo.nequi.viewcontrollers.MonederoViewController">
+
+    <children>
+
+        <!-- TITULO PRINCIPAL -->
+        <Text layoutX="20.0"
+              layoutY="34.0"
+              fill="#4523b5"
+              text="NEQUI - Mi Monedero">
+            <font>
+                <Font name="System Bold" size="20.0"/>
+            </font>
+        </Text>
+
+        <Separator layoutX="20.0"
+                   layoutY="47.0"
+                   prefWidth="720.0"/>
+
+        <!-- INFORMACION DEL CLIENTE -->
+        <Label layoutX="20.0"
+               layoutY="62.0"
+               text="Cliente:"
+               style="-fx-font-size: 12; -fx-font-weight: bold;"/>
+
+        <Label fx:id="lblCliente"
+               layoutX="80.0"
+               layoutY="62.0"
+               prefWidth="270.0"
+               text="Nombre del cliente"
+               style="-fx-font-size: 12;"/>
+
+        <Label layoutX="355.0"
+               layoutY="62.0"
+               text="Monedero:"
+               style="-fx-font-size: 12; -fx-font-weight: bold;"/>
+
+        <Label fx:id="lblCodigo"
+               layoutX="435.0"
+               layoutY="62.0"
+               prefWidth="95.0"
+               text="M01"
+               style="-fx-font-size: 12;"/>
+
+        <Label layoutX="575.0"
+               layoutY="62.0"
+               text="Tipo:"
+               style="-fx-font-size: 12; -fx-font-weight: bold;"/>
+
+        <Label fx:id="lblTipo"
+               layoutX="625.0"
+               layoutY="62.0"
+               prefWidth="110.0"
+               text="AHORRO"
+               style="-fx-font-size: 12;"/>
+
+        <!-- SALDO -->
+        <Label layoutX="20.0"
+               layoutY="96.0"
+               text="Saldo:"
+               style="-fx-font-size: 13; -fx-font-weight: bold;"/>
+
+        <Label fx:id="lblSaldo"
+               layoutX="75.0"
+               layoutY="92.0"
+               prefWidth="215.0"
+               text="0.00"
+               style="-fx-text-fill: #4523b5;">
+            <font>
+                <Font name="System Bold" size="19.0"/>
+            </font>
+        </Label>
+
+        <!-- PUNTOS -->
+        <Label layoutX="310.0"
+               layoutY="97.0"
+               text="Puntos:"
+               style="-fx-font-size: 12; -fx-font-weight: bold;"/>
+
+        <Label fx:id="lblPuntos"
+               layoutX="375.0"
+               layoutY="97.0"
+               prefWidth="110.0"
+               text="0"
+               style="-fx-font-size: 12;"/>
+
+        <!-- RANGO -->
+        <Label layoutX="550.0"
+               layoutY="97.0"
+               text="Rango:"
+               style="-fx-font-size: 12; -fx-font-weight: bold;"/>
+
+        <Label fx:id="lblRango"
+               layoutX="615.0"
+               layoutY="97.0"
+               prefWidth="120.0"
+               text="BRONCE"
+               style="-fx-font-size: 12;"/>
+
+        <Separator layoutX="20.0"
+                   layoutY="125.0"
+                   prefWidth="720.0"/>
+
+        <!-- TITULO OPERACIONES -->
+        <Text layoutX="20.0"
+              layoutY="146.0"
+              fill="#4523b5"
+              text="Operaciones de dinero">
+            <font>
+                <Font name="System Bold" size="15.0"/>
+            </font>
+        </Text>
+
+        <!-- DEPOSITAR -->
+        <Label layoutX="20.0"
+               layoutY="163.0"
+               text="Depositar dinero:"
+               style="-fx-font-size: 12;"/>
+
+        <TextField fx:id="txtDeposito"
+                   layoutX="20.0"
+                   layoutY="182.0"
+                   prefWidth="220.0"
+                   prefHeight="27.0"
+                   promptText="Monto: 500.00"
+                   style="-fx-font-size: 12;"/>
+
+        <Button fx:id="btnDepositar"
+                layoutX="20.0"
+                layoutY="225.0"
+                prefWidth="220.0"
+                prefHeight="27.0"
+                mnemonicParsing="false"
+                onAction="#depositarEvent"
+                text="Depositar"
+                style="-fx-background-color: #4523b5; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;"/>
+
+        <!-- RETIRAR -->
+        <Label layoutX="264.0"
+               layoutY="163.0"
+               text="Retirar dinero:"
+               style="-fx-font-size: 12;"/>
+
+        <TextField fx:id="txtRetiro"
+                   layoutX="264.0"
+                   layoutY="182.0"
+                   prefWidth="220.0"
+                   prefHeight="27.0"
+                   promptText="Monto: 200.00"
+                   style="-fx-font-size: 12;"/>
+
+        <Button fx:id="btnRetirar"
+                layoutX="264.0"
+                layoutY="225.0"
+                prefWidth="220.0"
+                prefHeight="27.0"
+                mnemonicParsing="false"
+                onAction="#retirarEvent"
+                text="Retirar"
+                style="-fx-background-color: #4523b5; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;"/>
+
+        <!-- TRANSFERIR -->
+        <Label layoutX="508.0"
+               layoutY="163.0"
+               text="Monedero destino:"
+               style="-fx-font-size: 12;"/>
+
+        <TextField fx:id="txtDestino"
+                   layoutX="508.0"
+                   layoutY="182.0"
+                   prefWidth="232.0"
+                   prefHeight="27.0"
+                   promptText="Ejemplo: M02"
+                   style="-fx-font-size: 12;"/>
+
+        <Label layoutX="508.0"
+               layoutY="220.0"
+               text="Monto a transferir:"
+               style="-fx-font-size: 12;"/>
+
+        <TextField fx:id="txtTransferencia"
+                   layoutX="508.0"
+                   layoutY="239.0"
+                   prefWidth="232.0"
+                   prefHeight="27.0"
+                   promptText="Monto: 300.00"
+                   style="-fx-font-size: 12;"/>
+
+        <Button fx:id="btnTransferir"
+                layoutX="508.0"
+                layoutY="274.0"
+                prefWidth="232.0"
+                prefHeight="27.0"
+                mnemonicParsing="false"
+                onAction="#transferirEvent"
+                text="Transferir"
+                style="-fx-background-color: #189d80; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;"/>
+
+        <Separator layoutX="20.0"
+                   layoutY="311.0"
+                   prefWidth="720.0"/>
+
+        <!-- TITULO BENEFICIOS -->
+        <Text layoutX="20.0"
+              layoutY="332.0"
+              fill="#4523b5"
+              text="Canjear beneficios">
+            <font>
+                <Font name="System Bold" size="15.0"/>
+            </font>
+        </Text>
+
+        <ComboBox fx:id="cbBeneficio"
+                  layoutX="20.0"
+                  layoutY="344.0"
+                  prefWidth="520.0"
+                  prefHeight="27.0"
+                  promptText="Seleccione un beneficio"
+                  style="-fx-font-size: 12;"/>
+
+        <Button fx:id="btnCanjear"
+                layoutX="555.0"
+                layoutY="344.0"
+                prefWidth="185.0"
+                prefHeight="27.0"
+                mnemonicParsing="false"
+                onAction="#canjearBeneficioEvent"
+                text="Canjear puntos"
+                style="-fx-background-color: #4523b5; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;"/>
+
+        <Separator layoutX="20.0"
+                   layoutY="386.0"
+                   prefWidth="720.0"/>
+
+        <!-- TITULO CONSULTAS -->
+        <Text layoutX="20.0"
+              layoutY="407.0"
+              fill="#4523b5"
+              text="Consultas y reportes">
+            <font>
+                <Font name="System Bold" size="15.0"/>
+            </font>
+        </Text>
+
+        <!-- BOTON HISTORIAL -->
+        <Button fx:id="btnHistorial"
+                layoutX="20.0"
+                layoutY="419.0"
+                prefWidth="220.0"
+                prefHeight="27.0"
+                mnemonicParsing="false"
+                onAction="#verHistorialEvent"
+                text="Ver historial"
+                style="-fx-background-color: #4523b5; -fx-text-fill: white; -fx-font-size: 12;"/>
+
+        <!-- BOTON REPORTE -->
+        <Button fx:id="btnReporte"
+                layoutX="264.0"
+                layoutY="419.0"
+                prefWidth="220.0"
+                prefHeight="27.0"
+                mnemonicParsing="false"
+                onAction="#verReporteEvent"
+                text="Reporte de gastos"
+                style="-fx-background-color: #4523b5; -fx-text-fill: white; -fx-font-size: 12;"/>
+
+        <!-- BOTON NOTIFICACIONES -->
+        <Button fx:id="btnNotificaciones"
+                layoutX="508.0"
+                layoutY="419.0"
+                prefWidth="232.0"
+                prefHeight="27.0"
+                mnemonicParsing="false"
+                onAction="#verNotificacionesEvent"
+                text="Ver notificaciones"
+                style="-fx-background-color: #4523b5; -fx-text-fill: white; -fx-font-size: 12;"/>
+
+        <!-- AREA DE RESULTADOS -->
+        <TextArea fx:id="txtResultados"
+                  layoutX="20.0"
+                  layoutY="456.0"
+                  prefWidth="720.0"
+                  prefHeight="61.0"
+                  editable="false"
+                  wrapText="true"
+                  promptText="Aqui apareceran los resultados."
+                  style="-fx-font-size: 11;"/>
+
+        <!-- MENSAJES -->
+        <Label fx:id="lblMensaje"
+               layoutX="20.0"
+               layoutY="533.0"
+               prefWidth="370.0"
+               text="Bienvenido a tu monedero"
+               style="-fx-font-size: 11;"/>
+
+        <!-- BOTON GESTION AVANZADA -->
+        <Button fx:id="btnGestionAvanzada"
+                layoutX="400.0"
+                layoutY="526.0"
+                prefWidth="142.0"
+                prefHeight="26.0"
+                mnemonicParsing="false"
+                onAction="#gestionAvanzadaEvent"
+                text="Gestion avanzada"
+                style="-fx-background-color: #189d80; -fx-text-fill: white; -fx-font-size: 11;"/>
+
+        <!-- BOTON ACTUALIZAR -->
+        <Button fx:id="btnActualizar"
+                layoutX="550.0"
+                layoutY="526.0"
+                prefWidth="85.0"
+                prefHeight="26.0"
+                mnemonicParsing="false"
+                onAction="#actualizarEvent"
+                text="Actualizar"
+                style="-fx-background-color: #4523b5; -fx-text-fill: white; -fx-font-size: 11;"/>
+
+        <!-- BOTON VOLVER -->
+        <Button fx:id="btnVolver"
+                layoutX="643.0"
+                layoutY="526.0"
+                prefWidth="97.0"
+                prefHeight="26.0"
+                mnemonicParsing="false"
+                onAction="#volverEvent"
+                text="Volver"
+                style="-fx-background-color: #dddddd; -fx-font-size: 11;"/>
+
+    </children>
+
+</AnchorPane>
