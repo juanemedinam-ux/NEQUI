@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0"
+            prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.edu.poo.nequi.viewcontrollers.ClientesViewController">
+
+    <children>
+
+        <!-- TITULO -->
+        <Text layoutX="30.0"
+              layoutY="52.0"
+              fill="#4523b5"
+              text="NEQUI - Gestion de Clientes">
+            <font>
+                <Font name="System Bold" size="29.0"/>
+            </font>
+        </Text>
+
+        <Separator layoutX="30.0"
+                   layoutY="72.0"
+                   prefWidth="840.0"/>
+
+        <!-- REGISTRO DE CLIENTES -->
+        <Label layoutX="30.0"
+               layoutY="101.0"
+               text="Registrar cliente"
+               style="-fx-font-size: 19; -fx-font-weight: bold;"/>
+
+        <Label layoutX="30.0"
+               layoutY="131.0"
+               text="Nombre:"/>
+
+        <TextField fx:id="txtNombre"
+                   layoutX="30.0"
+                   layoutY="154.0"
+                   prefWidth="355.0"
+                   promptText="Ingrese el nombre"/>
+
+        <Label layoutX="30.0"
+               layoutY="211.0"
+               text="Apellidos:"/>
+
+        <TextField fx:id="txtApellidos"
+                   layoutX="30.0"
+                   layoutY="234.0"
+                   prefWidth="355.0"
+                   promptText="Ingrese los apellidos"/>
+
+        <Label layoutX="30.0"
+               layoutY="291.0"
+               text="Identificacion:"/>
+
+        <TextField fx:id="txtIdentificacion"
+                   layoutX="30.0"
+                   layoutY="314.0"
+                   prefWidth="355.0"
+                   promptText="Ingrese la identificacion"/>
+
+        <Label layoutX="30.0"
+               layoutY="371.0"
+               text="Correo electronico:"/>
+
+        <TextField fx:id="txtCorreo"
+                   layoutX="30.0"
+                   layoutY="394.0"
+                   prefWidth="355.0"
+                   promptText="Ingrese el correo"/>
+
+        <Label layoutX="30.0"
+               layoutY="447.0"
+               text="Telefono:"/>
+
+        <TextField fx:id="txtTelefono"
+                   layoutX="30.0"
+                   layoutY="468.0"
+                   prefWidth="355.0"
+                   promptText="Ingrese el telefono"/>
+
+        <Button fx:id="btnRegistrar"
+                layoutX="30.0"
+                layoutY="517.0"
+                prefWidth="355.0"
+                prefHeight="34.0"
+                mnemonicParsing="false"
+                onAction="#registrarClienteEvent"
+                text="Registrar Cliente"
+                style="-fx-background-color: #4523b5; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+        <!-- SEPARADOR VERTICAL -->
+        <Separator layoutX="435.0"
+                   layoutY="100.0"
+                   orientation="VERTICAL"
+                   prefHeight="450.0"/>
+
+        <!-- GESTIONAR MONEDEROS -->
+        <Label layoutX="465.0"
+               layoutY="101.0"
+               text="Gestionar monederos"
+               style="-fx-font-size: 19; -fx-font-weight: bold;"/>
+
+        <Label layoutX="465.0"
+               layoutY="142.0"
+               text="Seleccione un cliente por identificacion:"/>
+
+        <ComboBox fx:id="cbClientes"
+                  layoutX="465.0"
+                  layoutY="166.0"
+                  prefWidth="380.0"
+                  onAction="#seleccionarClienteEvent"/>
+
+        <Label layoutX="465.0"
+               layoutY="231.0"
+               text="Codigo del nuevo monedero:"/>
+
+        <TextField fx:id="txtCodigoMonedero"
+                   layoutX="465.0"
+                   layoutY="254.0"
+                   prefWidth="380.0"
+                   promptText="Ejemplo: M03"/>
+
+        <Label layoutX="465.0"
+               layoutY="306.0"
+               text="Tipo de monedero:"/>
+
+        <ComboBox fx:id="cbTipoMonedero"
+                  layoutX="465.0"
+                  layoutY="329.0"
+                  prefWidth="380.0"/>
+
+        <Button fx:id="btnCrearMonedero"
+                layoutX="465.0"
+                layoutY="384.0"
+                prefWidth="380.0"
+                prefHeight="34.0"
+                mnemonicParsing="false"
+                onAction="#crearMonederoEvent"
+                text="Crear Monedero"
+                style="-fx-background-color: #4523b5; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+        <Label layoutX="465.0"
+               layoutY="443.0"
+               text="Seleccione el monedero que desea abrir:"/>
+
+        <ComboBox fx:id="cbMonederos"
+                  layoutX="465.0"
+                  layoutY="467.0"
+                  prefWidth="380.0"/>
+
+        <Button fx:id="btnAbrirMonedero"
+                layoutX="465.0"
+                layoutY="517.0"
+                prefWidth="380.0"
+                prefHeight="34.0"
+                mnemonicParsing="false"
+                onAction="#abrirMonederoEvent"
+                text="Abrir Monedero"
+                style="-fx-background-color: #189d80; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+        <!-- MENSAJES -->
+        <Label fx:id="lblMensaje"
+               layoutX="30.0"
+               layoutY="566.0"
+               prefWidth="840.0"
+               text="Bienvenido al sistema NEQUI"/>
+
+    </children>
+
+</AnchorPane>
